@@ -1,5 +1,6 @@
 // import { PrismaClient } from "@prisma/client/extension";
-import prisma from "@/app/lib/db";
+import { authOptions } from "@/lib/auth-options";
+import prisma from "@/lib/db";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 import {z} from "zod"
@@ -10,11 +11,11 @@ const UpvoteSchema = z.object({
 });
 
 export async function POST(req: NextRequest){
-    const session = await getServerSession();
+    const session = await getServerSession(authOptions);
 
     if(!session?.user.id){
         return NextResponse.json({
-            message: "Unathenticated"
+            message: "Unauthenticated"
         }, {
             status: 403
         });
@@ -33,13 +34,14 @@ export async function POST(req: NextRequest){
             }
         });
         return NextResponse.json({
-            message: "Downvote Successful"
+            message: "Downvote Successful",
         }, {
             status: 200
         });
     } catch(error){
         return NextResponse.json({
-            message: "Error while upvoting"
+            message: "Error while upvoting",
+            error
         }, {
             status: 403
         });
