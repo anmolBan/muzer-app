@@ -173,7 +173,9 @@ export default function StreamView({
                                 </iframe> : <Image 
                                             src={currentSong.bigImg} 
                                             alt="Alternative Content Description" 
-                                            style={{ width: '1236px', height: '695px', objectFit: 'cover' }} 
+                                            style={{ width: '1236px', height: '695px', objectFit: 'cover' }}
+                                            height={695}
+                                            width={1236}
                                             />}
                             </div>
                         ) : (

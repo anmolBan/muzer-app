@@ -9,7 +9,6 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
     }),
   ],
-  debug: true,
   session: {
     strategy: "jwt",  // Use 'jwt' if you want JWT tokens; otherwise, use 'database' if using sessions
   },
