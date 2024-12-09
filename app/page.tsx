@@ -36,9 +36,6 @@ export default function Home() {
                   }} className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold">
                     Get Started
                   </Button>
-                  {/* <Button className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0">
-                    Learn More
-                  </Button> */}
                 </div>
               </div>
             </div>
