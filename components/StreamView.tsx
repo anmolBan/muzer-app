@@ -52,7 +52,6 @@ export default function StreamView({
           const res = await axios.get(`/api/streams/?creatorId=${creatorId}`, {
               withCredentials: true
           });
-          // console.log(res);
           setQueue(sortQueue(res.data.filteredStreams));
           setCurrentSong(res.data.activeStream.stream);
       } catch (error) {
